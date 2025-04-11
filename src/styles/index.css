@@ -1,0 +1,17 @@
+@import 'npm:@pixu-talks/fonts';
+@import 'npm:@pixu-talks/theme';
+
+@layer pixu-talk {
+  [brand] {
+    position: fixed;
+    inset: auto auto 3rem 3rem;
+
+    img {
+      inline-size: 15rem;
+      aspect-ratio: 1;
+
+      border: 2px rebeccapurple;
+      border-radius: 2rem;
+    }
+  }
+}
