@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>classless is more - grid system example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+  </head>
+  <body>
+    <main>
+      <section container="">
+        <div row="">
+          <div col="" size="6" offset="3">
+            <h1>Heading H1</h1>
+            <h2>Heading H2</h2>
+            <h3>Heading H3</h3>
+            <h4>Heading H4</h4>
+            <h5>Heading H5</h5>
+            <h6>Heading H6</h6>
+            <p>Questo è un paragrafo</p>
+          </div>
+        </div>
+        <div row="">
+          <div col="" size="12" im-size="6" md-size="4" xl-size="3">col size="12" im-size="6" md-size="4" xl-size="3"</div>
+          <div col="" size="12" im-size="6" md-size="4" xl-size="3">col size="12" im-size="6" md-size="4" xl-size="3"</div>
+          <div col="" size="12" im-size="6" md-size="4" xl-size="6">col size="12" im-size="6" md-size="4" xl-size="6"</div>
+          <div col="" size="12" im-size="6" md-size="4" xl-size="6">col size="12" im-size="6" md-size="4" xl-size="6"</div>
+        </div>
+        <div row="">
+          <div col="" size="4" md-size="6">col size="4" md-size="6"</div>
+          <div col="" size="4" md-size="3">col size="4" md-size="3"</div>
+          <div col="" size="4" md-size="3">col size="4" md-size="3"</div>
+        </div>
+        <div row="">
+          <div col="" size="6" md-size="12">col size="6" md-size="12"</div>
+          <div col="" size="6" md-size="12">col size="6" md-size="12"</div>
+        </div>
+        <div row="">
+          <div col="" size="6" md-size="3">col size="6" md-size="3"</div>
+          <div col="" size="6" md-size="3">col size="6" md-size="3"</div>
+          <div col="" size="6" md-size="3">col size="6" md-size="3"</div>
+        </div>
+      </section>
+    </main>
+    <style>:root {
+  color-scheme: light dark;
+}
+
+@layer grid-system {
+  :root {
+    --gs--container--inline-size: 100vw;
+    --gs--container--gap: 1.5rem;
+    --gs--cols: 12;
+    --gs--gap: 1.5rem;
+    --gs--v-gap: 1.5rem;
+  }
+
+  [container] {
+    gap: var(--gs--container--gap);
+    inline-size: var(--gs--container--inline-size);
+    flex-flow: column;
+    block-size: auto;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+
+    &[container="fluid"] {
+      --gs--container--inline-size: 100%;
+    }
+  }
+
+  [row] {
+    grid-template-columns: repeat(var(--gs--cols), 1fr);
+    gap: var(--gs--v-gap) var(--gs--gap);
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    inline-size: 100%;
+    margin: 0;
+    display: grid;
+  }
+
+  [col] {
+    grid-column: auto / span var(--gs--cols);
+    max-inline-size: var(--gs--container--inline-size);
+    border: 1px solid #d3d3d340;
+    flex-flow: column;
+    display: flex;
+
+    &[size] {
+      grid-column-end: span attr(size type(< integer> ), var(--gs--cols));
+    }
+
+    &[offset] {
+      grid-column-start: calc(attr(offset type(< integer> ), 0)  + 1);
+    }
+  }
+
+  @media screen and (width >= 414px) {
+    :root {
+      --gs--container--inline-size: 375px;
+    }
+
+    [col] {
+      &[im-size] {
+        grid-column-end: span attr(im-size type(< integer> ), var(--gs--cols));
+      }
+
+      &[im-offset] {
+        grid-column-start: calc(attr(im-offset type(< integer> ), 0)  + 1);
+      }
+    }
+  }
+
+  @media screen and (width >= 576px) {
+    :root {
+      --gs--container--inline-size: 540px;
+    }
+
+    [col] {
+      &[xs-size] {
+        grid-column-end: span attr(xs-size type(< integer> ), var(--gs--cols));
+      }
+
+      &[xs-offset] {
+        grid-column-start: calc(attr(xs-offset type(< integer> ), 0)  + 1);
+      }
+    }
+  }
+
+  @media screen and (width >= 768px) {
+    :root {
+      --gs--container--inline-size: 720px;
+    }
+
+    [col] {
+      &[sm-size] {
+        grid-column-end: span attr(sm-size type(< integer> ), var(--gs--cols));
+      }
+
+      &[sm-offset] {
+        grid-column-start: calc(attr(sm-offset type(< integer> ), 0)  + 1);
+      }
+    }
+  }
+
+  @media screen and (width >= 1024px) {
+    :root {
+      --gs--container--inline-size: 960px;
+    }
+
+    [col] {
+      &[md-size] {
+        grid-column-end: span attr(md-size type(< integer> ), var(--gs--cols));
+      }
+
+      &[md-offset] {
+        grid-column-start: calc(attr(md-offset type(< integer> ), 0)  + 1);
+      }
+    }
+  }
+
+  @media screen and (width >= 1366px) {
+    :root {
+      --gs--container--inline-size: 1200px;
+    }
+
+    [col] {
+      &[lg-size] {
+        grid-column-end: span attr(lg-size type(< integer> ), var(--gs--cols));
+      }
+
+      &[lg-offset] {
+        grid-column-start: calc(attr(lg-offset type(< integer> ), 0)  + 1);
+      }
+    }
+  }
+
+  @media screen and (width >= 1600px) {
+    :root {
+      --gs--container--inline-size: 1366px;
+    }
+
+    [col] {
+      &[xl-size] {
+        grid-column-end: span attr(xl-size type(< integer> ), var(--gs--cols));
+      }
+
+      &[xl-offset] {
+        grid-column-start: calc(attr(xl-offset type(< integer> ), 0)  + 1);
+      }
+    }
+  }
+
+  @media screen and (width >= 1920px) {
+    :root {
+      --gs--container--inline-size: 1600px;
+    }
+
+    [col] {
+      &[xxl-size] {
+        grid-column-end: span attr(xxl-size type(< integer> ), var(--gs--cols));
+      }
+
+      &[xxl-offset] {
+        grid-column-start: calc(attr(xxl-offset type(< integer> ), 0)  + 1);
+      }
+    }
+  }
+}
+
+@layer typography {
+  :root {
+    --t--ratio: 1.067;
+    --t--font-size--base: 1.6rem;
+    --t--gap: 1rem;
+  }
+
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    font-size: var(--t--font-size--base);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, p) {
+    font-size: var(--t--font-size);
+    margin: 0;
+
+    & + & {
+      margin-block-start: var(--t--gap);
+    }
+  }
+
+  h1 {
+    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 6));
+  }
+
+  h2 {
+    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 5));
+  }
+
+  h3 {
+    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 4));
+  }
+
+  h4 {
+    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 3));
+  }
+
+  h5 {
+    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 2));
+  }
+
+  h6 {
+    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 1));
+  }
+
+  p {
+    --t--font-size: var(--t--font-size--base);
+  }
+}
+</style>
+  </body>
+</html>
