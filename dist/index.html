@@ -10,10 +10,9 @@
     <main class="reveal">
       <div class="slides">
         
-    <section intro="">
-  <h2>
-    (<mark>class</mark>)less is more
-  </h2>
+    <section intro="" data-background-gradient="linear-gradient(to bottom, transparent, rebeccapurple)">
+  <h1>(<mark>class</mark>)less is more</h1>
+  <h3>rethinking the UI Kit we already have</h3>
 </section>
 
 <section>
@@ -27,10 +26,10 @@
           </picture>
         </figure>
         <h3>Emiliano <mark>Pisu</mark></h3>
-        <small balance="" class="fragment">
-          <p><mark>Father</mark> of 2 lovely monsters</p>
-          <p><mark>D&D</mark> master, player ... whatever</p>
-          <p>
+        <small balance="">
+          <p class="fragment"><mark>Father</mark> of 2 lovely monsters</p>
+          <p class="fragment"><mark>D&D</mark> master, player ... whatever</p>
+          <p class="fragment">
             Senior <mark>Design Engineer</mark>, <mark>Sensei</mark> & Co-Host
             <br>
             @ Dev <mark>Dojo</mark> IT
@@ -72,11 +71,52 @@
 </section>
 
 <section>
-  <section>
-    <h4>Here goes the <mark>main</mark> topic title</h4>
+  <!-- <section data-transition="convex">
+    <h2 balance>The web <mark>didn't</mark> start with a reset</h2>
+  </section>
+  <section data-transition="convex">
+    <img src="./assets/www.png" width="700" alt="" />
   </section>
   <section>
-    <h4>Here goes the main topic description</h4>
+    <ul>
+      <li>HTML was enough to create structure and convey information</li>
+      <li>Browsers provided consistent, usable styling out of the box</li>
+    </ul>
+  </section> -->
+  <section>
+    <h3 balance=""><mark>Does it makes sense</mark> resetting CSS in 2025?</h3>
+  </section>
+  <section>
+    <p balance="">In modern web dev, user agents are <mark>frontline accessibility framework</mark>.</p>
+  </section>
+  <section>
+    <p balance="">If we write semantic HTML, gently extending it with CSS, we <mark>inherit decades of research</mark> about assistive technologies support by default.</p>
+  </section>
+  <section>
+    <h3 balance="">
+      This isn't a fallback. <br>
+      It's the <mark>starting line</mark>.
+    </h3>
+  </section>
+  <section>
+    <h3 balance="">What are the <mark>main concerns</mark> with CSS Resets?</h3>
+  </section>
+  <section>
+    <h4 balance="">Concern #0: CSS Resets <mark>can be harmful</mark> to users who rely on keyboards for navigation</h4>
+  </section>
+  <section>
+    <h4 balance="">Concern #1: Every element that is “zeroed” <mark>must then be redefined</mark></h4>
+  </section>
+  <section>
+    <h4 balance="">Concern #2: CSS Resets are <mark>technical and design debt</mark> at the same time</h4>
+  </section>
+  <section>
+    <ul>
+      <li><a href="pix-no-css.html" target="_blank" rel="noopener noreferrer">Example no CSS</a></li>
+      <li><a href="pix-with-meyer-reset.html" target="_blank" rel="noopener noreferrer">Example with Meyer Reset</a></li>
+      <li><a href="pix-with-modern-reset.html" target="_blank" rel="noopener noreferrer">Example with Modern Reset</a></li>
+      <li><a href="pix.html" target="_blank" rel="noopener noreferrer">Example with CSS</a></li>
+    </ul>
   </section>
 </section>
 
@@ -113,7 +153,257 @@
 
 
     <section>
-  <!-- Here goes the talk slides -->
+  <!-- Slide: Why Classless CSS -->
+  <section>
+    <h2>Why Classless CSS?</h2>
+    <ul>
+      <li>Less complexity, more semantics</li>
+      <li>Leverages browser defaults instead of overriding them</li>
+      <li>Accessibility and performance out of the box</li>
+    </ul>
+  </section>
+
+  <!-- Slide: Frameworks Overview -->
+  <section>
+    <h2>Notable Classless Frameworks</h2>
+    <ul>
+      <li><strong>Pico.css</strong> - Clean, themeable, responsive</li>
+      <li><strong>Water.css</strong> - Zero-config elegance</li>
+      <li><strong>Almond.css</strong> - Lightweight and opinionated</li>
+    </ul>
+  </section>
+
+  <!-- Slide: Concerns with CSS Resets -->
+  <section>
+    <h2>Main Concerns with CSS Resets</h2>
+    <ul>
+      <li>Every zeroed element must be redefined → increases CSS size</li>
+      <li>May remove useful native behaviors that are never reintroduced</li>
+      <li>Can negatively affect accessibility, especially keyboard nav</li>
+    </ul>
+    <p><small>— from Russ Weakley and others across CSS reset critiques</small></p>
+  </section>
+
+  <!-- Slide: Reassessing the Need for Reset -->
+  <section>
+    <h2>Should We Still Reset in 2025?</h2>
+    <ul>
+      <li>Modern browsers are more consistent than ever</li>
+      <li>Newer classless frameworks build on user agent styles</li>
+      <li>We can extend, not erase</li>
+    </ul>
+  </section>
+
+  <!-- Slide: Utility Attributes & Typed Attribute Selectors -->
+  <section>
+    <h2>Utility Attributes & CSS</h2>
+    <ul>
+      <li>Use attributes like <code>data-size</code>, <code>data-variant</code>, <code>data-theme</code></li>
+      <li>Target in CSS without classes</li>
+      <li>Less DOM noise, better scalability</li>
+    </ul>
+  </section>
+
+  <!-- Slide: CSS is evolving -->
+  <section>
+    <h2>Typed Attribute Selectors (The Future)</h2>
+    <ul>
+      <li><code>[data-size|d &gt;= 2]</code> - type-aware styling logic</li>
+      <li>Works without JavaScript</li>
+      <li>Bridges gap between semantics and styling</li>
+      <li>Enable variants, responsive behaviors, and themes</li>
+    </ul>
+  </section>
+
+  <!-- Slide: Future Styling Example -->
+  <section>
+    <h2>Future-Proof CSS Example</h2>
+    <pre><code>button[data-variant="ghost"] {
+background: transparent;
+border: 1px dashed currentColor;
+}
+
+[data-theme="dark"] {
+--bg: #111;
+--text: #eee;
+}</code></pre>
+    <p>Expressive styling through clean HTML</p>
+  </section>
+
+  <!-- Slide: Takeaway -->
+  <section>
+    <h2>Takeaway</h2>
+    <p>We don’t need to fight the browser anymore.</p>
+    <p>Semantic HTML, attribute utilities, and classless CSS lead to cleaner, faster, more accessible UIs.</p>
+    <p><strong>(class)less is more.</strong></p>
+  </section>
+
+  <!-- Slide 2: Opening Provocation (Extended) -->
+  <section>
+    <h2>What If We’ve Been Overlooking the Obvious?</h2>
+    <p>Modern design systems are sophisticated, scalable, and expensive to build.</p>
+    <p>But what if the browser already gave us a free, built-in design system?</p>
+    <p><strong>System colors. Default spacing. A typographic hierarchy. Semantic elements. Accessibility for free.</strong></p>
+    <p>We’ve been spending years recreating what’s already there — just less consistent and often less accessible.</p>
+  </section>
+
+  <!-- Slide 3: The Browser’s Hidden Design System -->
+  <section>
+    <h2>The Browser’s Hidden Design System</h2>
+    <ul>
+      <li><strong>System Colors:</strong> Accessible palette via <code>Canvas</code>, <code>Highlight</code>, <code>ButtonText</code>, etc.</li>
+      <li><strong>Type Scale:</strong> Heading elements from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> follow a visual hierarchy.</li>
+      <li><strong>Default Spacing:</strong> Margins and paddings reflect an implied spacing scale.</li>
+      <li><strong>Focus Styles:</strong> Keyboard-focused elements get visible outlines for free.</li>
+      <li><strong>Form Inputs:</strong> Native UI elements that adapt to platform conventions.</li>
+    </ul>
+    <p><em>This is a foundational design system — crude, undocumented, but real.</em></p>
+  </section>
+
+  <!-- Slide 4: How We Broke Native UI -->
+  <section>
+    <h2>How We Broke Native UI</h2>
+    <p>Modern dev practices often discard browser defaults entirely.</p>
+    <ul>
+      <li>CSS resets remove spacing and styles indiscriminately</li>
+      <li>Component libraries rebuild native inputs with <code>div</code>s</li>
+      <li>We override system focus styles for aesthetics</li>
+      <li>Custom tokens replicate what the browser already provides</li>
+    </ul>
+    <p>All of this introduces complexity, inconsistency, and accessibility debt.</p>
+  </section>
+
+  <!-- Slide 5: Case Study - Lists -->
+  <section>
+    <h2>Case Study: Lists</h2>
+    <p>The humble <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> come with default spacing, roles, and accessibility baked in.</p>
+    <ul>
+      <li>Resetting their styles loses the semantic and visual rhythm</li>
+      <li>Replacing them with <code>div</code> wrappers breaks screen reader expectations</li>
+    </ul>
+    <p>Embracing the default behavior yields better UX with zero effort.</p>
+  </section>
+
+  <!-- Slide 6: Case Study - Buttons -->
+  <section>
+    <h2>Case Study: Buttons</h2>
+    <p><code>&lt;button&gt;</code> is one of the most overridden elements on the web.</p>
+    <ul>
+      <li>Comes with keyboard support, click behavior, and focus handling</li>
+      <li>Gets restyled into <code>div</code>+<code>onClick</code> monstrosities</li>
+      <li>Creates extra work to reintroduce accessibility</li>
+    </ul>
+    <p><em>What if we styled buttons instead of replacing them?</em></p>
+  </section>
+
+  <!-- Slide 7: Case Study - Forms -->
+  <section>
+    <h2>Case Study: Forms</h2>
+    <p>Native HTML forms offer labels, validation, keyboard nav, and accessibility out of the box.</p>
+    <ul>
+      <li>Overriding them with custom components often leads to regressions</li>
+      <li>Native forms integrate better with browser UX and accessibility APIs</li>
+    </ul>
+    <p><strong>Let’s use the platform — then enhance it.</strong></p>
+  </section>
+
+  <!-- Slide 8: The Case for Classless CSS -->
+  <section>
+    <h2>The Case for Classless CSS</h2>
+    <p>What if HTML was the design system?</p>
+    <ul>
+      <li>Classless CSS styles native elements directly</li>
+      <li>Clean, semantic HTML — no div soup</li>
+      <li>Respects browser behavior, minimizes overrides</li>
+    </ul>
+    <p>This is design with the grain of the web, not against it.</p>
+  </section>
+
+  <!-- Slide 9: When to Extend, Not Replace -->
+  <section>
+    <h2>Extend, Don’t Replace</h2>
+    <p>Instead of fighting the browser, start from what it gives you:</p>
+    <ul>
+      <li>Use semantic elements</li>
+      <li>Style with minimal overrides</li>
+      <li>Add tokens, themes, interactivity as enhancements — not replacements</li>
+    </ul>
+    <p>Modern CSS gives us the tools to do this elegantly.</p>
+  </section>
+
+  <!-- Slide 10: Final Thought -->
+  <section>
+    <h2>Rethink Your Design System Stack</h2>
+    <p>Maybe the leanest, fastest, most accessible UI kit is already in your browser.</p>
+    <p><strong>Embrace HTML. Respect semantics. Enhance with purpose.</strong></p>
+    <p>Start small. Extend intentionally. And let the browser do some of the heavy lifting.</p>
+  </section>
+
+  <section>
+    <h2>Why Attribute Utilities Matter</h2>
+    <ul>
+      <li>Attributes are declarative, readable, and native to HTML</li>
+      <li>They separate intent from implementation</li>
+      <li>They reduce visual noise in markup</li>
+      <li>Perfect for consistent, scalable UI state and theming</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>New CSS API: Typed Attribute Selectors</h2>
+    <p>CSS is getting smarter about attributes.</p>
+    <ul>
+      <li>New syntax: <code>[attr|d=value]</code> — matches numeric, boolean, or string values</li>
+      <li>Supports comparisons: <code>[data-size|d &gt;= 3]</code></li>
+      <li>Full integration into selectors and media-like logic</li>
+      <li>Native data binding — no JS needed</li>
+    </ul>
+    <p><em>This opens the door to dynamic styling via HTML alone.</em></p>
+  </section>
+
+  <section>
+    <h2>Examples: Future CSS with Typed Attributes</h2>
+    <pre><code>/* Button variants */
+button[data-variant="ghost"] {
+  background: none;
+  border: 1px dashed currentColor;
+}
+
+/* Select size modifiers */
+select[data-size|d=3] {
+  font-size: 1.25rem;
+  padding: 0.75rem;
+}
+
+/* Theme toggles */
+[data-theme="dark"] {
+  --color-bg: #111;
+  --color-text: #eee;
+}</code></pre>
+    <p><strong>One attribute, infinite UI variations.</strong></p>
+  </section>
+
+  <section>
+    <h2>HTML + CSS: Finally Talking</h2>
+    <ul>
+      <li>No runtime JavaScript required</li>
+      <li>State expressed declaratively in the DOM</li>
+      <li>Custom logic baked into selectors</li>
+      <li>Greater control for theming, variants, sizing, visibility</li>
+    </ul>
+    <p><strong>HTML becomes the API. CSS becomes reactive.</strong></p>
+  </section>
+
+  <section>
+    <h2>Attribute-First = Future-Ready</h2>
+    <ul>
+      <li>Composes well with modern specs (e.g. container queries, cascade layers)</li>
+      <li>Reduces JS dependencies</li>
+      <li>Enables robust design systems that scale</li>
+      <li>Better debugging, source of truth remains in the markup</li>
+    </ul>
+    <p><em>The future of styling is declarative, expressive, and classless.</em></p>
+  </section>
 </section>
 
     <section>
