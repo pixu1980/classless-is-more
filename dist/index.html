@@ -2,9 +2,10 @@
 <html lang="it">
   <head>
     <meta charset="utf-8">
-    <title>Talk Title</title>
+    <title>(class)less is more</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="classless-is-more.477b74f9.css">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="classless-is-more.54be9023.css">
   </head>
   <body>
     <main class="reveal">
@@ -45,7 +46,7 @@
           github.com/pixu1980
         </h6>
         <h6>
-          <img src="codepen.dd4edd71.svg" alt="pixu1980@codepen">
+          <img src="codepen.01ed2da0.svg" alt="pixu1980@codepen">
           codepen.io/pixu1980
         </h6>
         <h6>
@@ -123,22 +124,49 @@
 
 <section>
   <section>
+    <h4>
+      Modern design systems are <mark>stunning</mark>, <mark>sophisticated</mark>, <mark>scalable</mark>... <span class="fragment">and <mark>expensive to build</mark></span>
+    </h4>
+  </section>
+  <section>
+    <h3>How we break the <mark>native UI</mark>?</h3>
+  </section>
+  <section>
+    <h4>
+      Modern dev practices often <br>
+      <mark>discard browser defaults entirely</mark>
+    </h4>
+  </section>
+  <section>
+    <h4>
+      All of this introduces <mark>complexity</mark>, <br>
+      <mark>inconsistency</mark>, and <mark>accessibility debt</mark>
+    </h4>
+  </section>
+</section>
+
+<section>
+  <section>
     <h2 balance=""><mark>Does it makes sense</mark> resetting CSS in <mark>2025</mark>?</h2>
+  </section>
+  <section>
+    <figure>
+      <img src="youre-not-thinking-fourth-dimensionally.3ac0995b.gif" width="550" alt="Doc. Emmet L. Brown saying 'Marty, you are not thinking fourth dimensionally!'">
+    </figure>
   </section>
   <section>
     <h3 balance="">A look at the <mark>past, present, and future</mark> of browser styling</h3>
   </section>
   <section>
-    <h2 balance=""><mark>Why</mark> CSS Resets were born?</h2>
+    <h3 balance=""><mark>Why</mark> CSS Resets were born?</h3>
     <ul>
       <li class="fragment">Early browsers had <mark>inconsistent default styles</mark></li>
       <li class="fragment">Margins, paddings, font sizes <mark>varied wildly</mark></li>
       <li class="fragment">Resets ensured a <mark>clean and predictable</mark> baseline</li>
-      <li class="fragment">Popularized by Eric Meyer, Normalize.css, etc.</li>
     </ul>
   </section>
   <section>
-    <h2 balance="">What's the <mark>philosophy</mark> of CSS Resets?</h2>
+    <h3 balance="">What's the <mark>philosophy</mark> of CSS Resets?</h3>
     <ul>
       <li class="fragment"><mark>Erase all</mark> default styles</li>
       <li class="fragment">Manually <mark>reapply</mark> only what you want</li>
@@ -147,67 +175,76 @@
     </ul>
   </section>
   <section>
-    <h2 balance="">What are the <mark>main concerns</mark> with CSS Resets?</h2>
+    <h3 balance="">What are the <mark>main concerns</mark> with CSS Resets?</h3>
     <p balance="">Hidden costs of resetting <mark>already working</mark> stuff</p>
   </section>
   <section>
-    <h3 balance="">#0 - Accessibility: CSS Resets <mark>can be harmful</mark> to users who rely on keyboards for navigation</h3>
+    <h4 balance="">#0 - Accessibility: CSS Resets <mark>can be harmful</mark> to users who rely on keyboards for navigation</h4>
   </section>
   <section>
-    <h3 balance="">#1 - Redundancy: CSS Resets and Every element that is “zeroed” <mark>must then be redefined</mark></h3>
+    <h4 balance="">#1 - Redundancy: CSS Resets and Every element that is “zeroed” <mark>must then be redefined</mark></h4>
   </section>
   <section>
-    <h3 balance="">#2 - Debt: CSS Resets are <mark>technical and design debt</mark> at the same time</h3>
+    <h4 balance="">#2 - Debt: CSS Resets are <mark>technical and design debt</mark> at the same time</h4>
   </section>
   <section>
-    <h3 balance="">#3 - Loss: CSS Resets make <mark>loss of useful defaults</mark> (e.g. system colors, focus styles, button behavior)</h3>
+    <h4 balance="">#3 - Loss: CSS Resets make <mark>loss of useful defaults</mark> (e.g. system colors, focus styles, button behavior)</h4>
   </section>
   <section>
-    <h2>To reset or <mark>not to</mark> reset?</h2>
+    <h3>To reset or <mark>not to</mark> reset?</h3>
   </section>
   <section>
-    <h3>
-      CSS resets <mark>were</mark> essential in the past, <span class="fragment">today we have better tools...</span> <span class="fragment">and <mark>better defaults</mark>.</span>
-    </h3>
+    <h4>Take<mark>away</mark></h4>
+    <blockquote>CSS resets <mark>were essential</mark> in the past, today we have <mark>better tools</mark>... and <mark>better defaults</mark></blockquote>
   </section>
 </section>
 
 <section>
   <section>
-    <h2>
-      The Browser <mark>*has*</mark> <br>
-      a Design System
-    </h2>
-  </section>
-  <section>
     <h3>
-      What if we’ve been <br>
-      <mark>overlooking the obvious</mark>?
+      The Browser’s <mark>Hidden</mark> <br>
+      Design System
     </h3>
   </section>
   <section>
     <h4>
-      Modern design systems are <mark>stunning</mark>, <mark>sophisticated</mark>, <mark>scalable</mark>... <span class="fragment">and <mark>expensive to build</mark></span>
+      A <mark>crude</mark>, mostly <mark>undocumented</mark>, <br>
+      foundational design system: but <mark>real</mark>!
     </h4>
   </section>
   <section>
-    <h4>
-      A modern browser provides <br>
-      <mark>a bunch built-ins</mark>:
-    </h4>
+    <h5 balance="">
+      <mark>System Colors</mark><br>
+      Accessible palette via <mark>Canvas</mark>, <mark>Highlight</mark>, <mark>ButtonText</mark>, etc.
+    </h5>
   </section>
   <section>
-    <ul>
-      <li>Default <mark>spacings</mark></li>
-      <li class="fragment">Typographic <mark>hierarchy</mark></li>
-      <li class="fragment"><mark>Semantic</mark> elements</li>
-      <li class="fragment">System <mark>colors</mark></li>
-      <li class="fragment"><mark>Accessibility</mark>... <span class="fragment">for free</span></li>
-    </ul>
+    <h5 balance="">
+      <mark>Type Scale</mark><br>
+      Heading elements from <mark>&lt;h1&gt;</mark> to <mark>&lt;h6&gt;</mark> follow a visual hierarchy
+    </h5>
+  </section>
+  <section>
+    <h5 balance="">
+      <mark>Default Spacing</mark><br>
+      Margins and paddings reflect an implied spacing scale
+    </h5>
+  </section>
+  <section>
+    <h5 balance="">
+      <mark>Focus Styles</mark><br>
+      Keyboard-focused elements get visible outlines out of the box
+    </h5>
+  </section>
+  <section>
+    <h5 balance="">
+      <mark>Form Inputs</mark><br>
+      Native UI elements that adapt to platform conventions
+    </h5>
   </section>
   <section>
     <p>
-      One way or another we've spent years <mark>re-building what was already there</mark>... <span class="fragment">just <mark>less consistent</mark> and often <mark>less accessible</mark></span>
+      In some way we waste out efforts <mark>re-building</mark> what's already there, <span class="fragment">just <mark>less consistent</mark>...</span> <span class="fragment">and too often <mark>less accessible</mark></span>
     </p>
   </section>
   <section>
@@ -227,9 +264,11 @@
     </ul>
   </section>
   <section>
-    <h3>Ever heard about CSS <mark>System Colors</mark>?</h3>
+    <h3>Ever used CSS <mark>System Colors</mark>?</h3>
+  </section>
+  <section>
     <div class="system-colors">
-      <p class="codepen" data-height="400" data-default-tab="result" data-slug-hash="YPzmeom" data-pen-title="HTML elements &amp;amp; CSS system colors" data-user="pixu1980" style="box-sizing: border-box; border: 2px solid; justify-content: center; align-items: center; margin: 1em 0; padding: 1em; display: flex">
+      <p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="YPzmeom" data-pen-title="HTML elements &amp;amp; CSS system colors" data-user="pixu1980" style="box-sizing: border-box; border: 2px solid; justify-content: center; align-items: center; margin: 1em 0; padding: 1em; display: flex">
         <span>See the Pen <a href="https://codepen.io/pixu1980/pen/YPzmeom"> HTML elements &amp; CSS system colors</a> by pixu1980 (<a href="https://codepen.io/pixu1980">@pixu1980</a>) on <a href="https://codepen.io">CodePen</a>.</span>
       </p>
       <script async="" src="https://public.codepenassets.com/embed/index.js"></script>
@@ -244,152 +283,401 @@
     </div>
   </section>
   <section>
-    <h2>Takeaway</h2>
-    <p>We don’t need to fight the browser anymore.</p>
-    <p>Semantic HTML, attribute utilities, and classless CSS lead to cleaner, faster, more accessible UIs.</p>
-    <p><strong>(class)less is more.</strong></p>
+    <h3>Take<mark>away</mark></h3>
+    <blockquote>Don’t <mark>"fight"</mark> the browser anymore, <mark>embrace</mark> it!</blockquote>
   </section>
 </section>
 
 <section>
   <section>
-    <h2>Conclusion</h2>
-    <p>Embrace semantic HTML.</p>
-    <p>Style with classless CSS.</p>
-    <p>Scale with attribute-first utilities.</p>
-    <h3>(class)less is more.</h3>
+    <h2 balance=""><mark>Attribute utilities</mark> instead of classes</h2>
   </section>
   <section>
-    <h2>Utility Attributes & CSS</h2>
-    <ul>
-      <li>Use attributes like <code>data-size</code>, <code>data-variant</code>, <code>data-theme</code></li>
-      <li>Target in CSS without classes</li>
-      <li>Less DOM noise, better scalability</li>
-    </ul>
+    <h3 balance="">Do you mean using attributes <mark>instead of</mark> classes? <mark class="fragment">Yep!</mark></h3>
   </section>
   <section>
-    <h2>Typed Attribute Selectors (The Future)</h2>
-    <ul>
-      <li><code>[data-size|d &gt;= 2]</code> - type-aware styling logic</li>
-      <li>Works without JavaScript</li>
-      <li>Bridges gap between semantics and styling</li>
-      <li>Enable variants, responsive behaviors, and themes</li>
-    </ul>
+    <h3 balance="">Do you know CSS <mark>attr()</mark> function is about to get a <mark>game-changer update</mark>?</h3>
   </section>
-  <section>
-    <h2>Future-Proof CSS Example</h2>
-    <pre><code>button[data-variant="ghost"] {
-background: transparent;
-border: 1px dashed currentColor;
-}
+  <section data-transition="convex">
+  <h3>"First you turn the <mark>time circuits on</mark>..."</h3>
+</section>
+<section data-transition="convex">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" type="text/css">
+  <link href="http://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" type="text/css">
+  <audio data-autoplay="" src="time-circuits-101soundboards.628192dd.mp3"></audio>
+  <div time-circuits="">
+    <div class="outer destination">
+      <div class="row">
+        <div class="header-label">MONTH</div>
+        <div class="header-label">DAY</div>
+        <div class="header-label">YEAR</div>
+        <div class="header-label">HOUR</div>
+        <div class="header-label">MIN</div>
+      </div>
+      <div class="row">
+        <div class="display month">
+          <p class="destination time">NOV</p>
+        </div>
 
-[data-theme="dark"] {
---bg: #111;
---text: #eee;
-}</code></pre>
-    <p>Expressive styling through clean HTML</p>
-  </section>
+        <div class="display">
+          <p class="destination time">05</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="display">
+          <p class="destination time">1955</p>
+          <p class="number-back">8888</p>
+        </div>
+
+        <div class="led-time-separator-container">
+          <div class="ampm-label am-label">AM</div>
+          <div class="led led-destination-on"></div>
+          <div class="ampm-label pm-label">PM</div>
+          <div class="led led-destination"></div>
+        </div>
+
+        <div class="display">
+          <p class="destination time">06</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="led-unit-separator-container">
+          <div class="led led-destination-on"></div>
+          <div class="led led-destination-on"></div>
+          <div class="led led-destination"></div>
+          <div class="led led-destination"></div>
+        </div>
+
+        <div class="display">
+          <p class="destination time">00</p>
+          <p class="number-back">88</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer-label">DESTINATION TIME</div>
+      </div>
+    </div>
+    <div class="outer present">
+      <div class="row">
+        <div class="header-label">MONTH</div>
+        <div class="header-label">DAY</div>
+        <div class="header-label">YEAR</div>
+        <div class="header-label">HOUR</div>
+        <div class="header-label">MIN</div>
+      </div>
+      <div class="row">
+        <div class="display month">
+          <p id="present-month" class="present time">OCT</p>
+        </div>
+
+        <div class="display">
+          <p id="present-day" class="present time">21</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="display">
+          <p id="present-year" class="present time">1985</p>
+          <p class="number-back">8888</p>
+        </div>
+
+        <div class="led-time-separator-container">
+          <div class="ampm-label am-label">AM</div>
+          <div id="present-am-led" class="led led-present"></div>
+          <div class="ampm-label pm-label">PM</div>
+          <div id="present-pm-led" class="led led-present"></div>
+        </div>
+
+        <div class="display">
+          <p id="present-hour" class="present time">01</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="led-unit-separator-container">
+          <div class="led led-present-on"></div>
+          <div class="led led-present-on"></div>
+          <div class="led led-present"></div>
+          <div class="led led-present"></div>
+        </div>
+
+        <div class="present display">
+          <p id="present-minute" class="present time">22</p>
+          <p class="number-back">88</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer-label">PRESENT TIME</div>
+      </div>
+    </div>
+    <div class="outer departed">
+      <div class="row">
+        <div class="header-label">MONTH</div>
+        <div class="header-label">DAY</div>
+        <div class="header-label">YEAR</div>
+        <div class="header-label">HOUR</div>
+        <div class="header-label">MIN</div>
+      </div>
+      <div class="row">
+        <div class="display month">
+          <p class="departed time">OCT</p>
+        </div>
+
+        <div class="display">
+          <p class="departed time">21</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="display">
+          <p class="departed time">1985</p>
+          <p class="number-back">8888</p>
+        </div>
+
+        <div class="led-time-separator-container">
+          <div class="ampm-label am-label">AM</div>
+          <div class="led led-departed-on"></div>
+          <div class="ampm-label pm-label">PM</div>
+          <div class="led led-departed"></div>
+        </div>
+
+        <div class="display">
+          <p class="departed time">01</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="led-unit-separator-container">
+          <div class="led led-departed-on"></div>
+          <div class="led led-departed-on"></div>
+          <div class="led led-departed"></div>
+          <div class="led led-departed"></div>
+        </div>
+
+        <div class="display">
+          <p class="departed time">20</p>
+          <p class="number-back">88</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer-label">LAST TIME DEPARTED</div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section>
-    <h2>Attribute Utilities Instead of Classes</h2>
-    <ul>
-      <li><code>data-theme="dark"</code></li>
-      <li><code>data-variant="ghost"</code></li>
-      <li><code>data-size="lg"</code></li>
-    </ul>
-    <p>Declarative, readable, scalable styling.</p>
+    <h3>What is <mark>attr()</mark>?</h3>
+    <pre>
+      <code class="hljs html" data-trim="" data-line-numbers="">
+        <div data-title="This is the data-title"></div>
+      </code>
+    </pre>
+    <pre>
+      <code class="hljs css" data-trim="" data-line-numbers="">
+        div::after {
+          content: attr(data-title);
+        }
+      </code>
+    </pre>
+    <small balance="">Traditionally limited to the <mark>content</mark> property and returned strings, the <mark>attr()</mark> function in CSS allows you to retrieve the value of an HTML attribute and use it in your styles.</small>
   </section>
-
-  <!-- Typed Attributes CSS API -->
   <section>
-    <h2>The Future: Typed Attribute Selectors</h2>
-    <ul>
-      <li><code>[data-size|d &gt; 2]</code></li>
-      <li>Enables dynamic UI states without JS</li>
-      <li>Bridges HTML semantics with CSS logic</li>
-    </ul>
+    <h3>
+      Our HTML is
+      <mark>
+        already <br>
+        full
+      </mark>
+      of attributes
+    </h3>
+    <pre>
+      <code class="hljs html" data-trim="" data-line-numbers="">
+        &lt;button disabled aria-label="Close modal"&gt;x&lt;/button&gt;
+        &lt;input type="email" required placeholder="Your email" /&gt;
+        &lt;div data-theme="dark" data-size="lg"&gt;&lt;/div&gt;
+      </code>
+    </pre>
   </section>
-
-  <!-- Progressive Enhancement -->
   <section>
-    <h2>Progressive Enhancement Wins</h2>
+    <h3>
+      <mark>Why not</mark> use them <br>
+      for CSS selectors?
+    </h3>
+    <pre>
+      <code class="hljs scss" data-trim="" data-line-numbers="">
+        [aria-label] { ... }
+        [type="email"] { ... }
+        [data-size*="lg"] { ... }
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h3>CSS attr() <mark>evolution</mark></h3>
+    <p balance="">Unlocking <mark>infinite possibilities</mark> with typed attributes</p>
+  </section>
+  <section>
     <ul>
-      <li>Content-first design</li>
+      <li>Content-first web design</li>
       <li>Accessible and functional by default</li>
-      <li>CSS enhances, never replaces meaning</li>
-    </ul>
-  </section>
-
-  <!-- Clean DOM = Better UX -->
-  <section>
-    <h2>Clean DOM, Better UX</h2>
-    <ul>
+      <li>Declarative, readable, scalable</li>
       <li>No class spaghetti</li>
       <li>Easy to debug and maintain</li>
       <li>Reduced dependency on JS frameworks</li>
     </ul>
   </section>
-
-  <!-- Slide 3: The Browser’s Hidden Design System -->
   <section>
-    <h2>The Browser’s Hidden Design System</h2>
-    <ul>
-      <li><strong>System Colors:</strong> Accessible palette via <code>Canvas</code>, <code>Highlight</code>, <code>ButtonText</code>, etc.</li>
-      <li><strong>Type Scale:</strong> Heading elements from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> follow a visual hierarchy.</li>
-      <li><strong>Default Spacing:</strong> Margins and paddings reflect an implied spacing scale.</li>
-      <li><strong>Focus Styles:</strong> Keyboard-focused elements get visible outlines for free.</li>
-      <li><strong>Form Inputs:</strong> Native UI elements that adapt to platform conventions.</li>
-    </ul>
-    <p><em>This is a foundational design system — crude, undocumented, but real.</em></p>
+    <h2>What's New?</h2>
+    <p balance="">Now, <mark>attr()</mark> supports typed values, enabling its use beyond <mark>content</mark> property</p>
+  </section>
+  <section>
+    <pre>
+      <code class="hljs scss" data-trim="" data-line-numbers="">
+        div {
+          font-size: attr(data-font-size length);
+          color: attr(data-color color, black);
+        }
+      </code>
+    </pre>
+  </section>
+  <section>
+    <p>
+      Supported types include: <mark>angle</mark>, color, <mark>custom-ident</mark>, image, <mark>integer</mark>, length, <mark>length-percentage</mark>, number, <mark>percentage</mark>, resolution, <mark>string</mark>, time,
+      <mark>transform-function</mark>, ...
+    </p>
+  </section>
+  <section>
+    <h2>Example: Grid Control</h2>
+    <p>Use <mark>attr()</mark> to control grid layout via HTML attributes.</p>
+    <pre>
+      <code class="hljs html" data-trim="" data-line-numbers="">
+        &lt;div data-column-start="1" data-column-end="3"&gt;
+          this is the div content
+        &lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code class="hljs css" data-trim="" data-line-numbers="">
+        div {
+          grid-column-start: attr(column-start integer);
+          grid-column-end: attr(column-end integer);
+        }
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Example: Dynamic Colors</h2>
+    <p>Set colors dynamically using attributes.</p>
+    <pre>
+      <code class="hljs html" data-trim="" data-line-numbers="">
+        &lt;div data-color="rebeccapurple"&gt;Red Text&lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code class="hljs css" data-trim="" data-line-numbers="">
+        div {
+          color: attr(data-color color, black);
+          background-color: color-mix(in srgb, attr(data-color color) 50%, white 50%);
+        }
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Example: Font Sizes</h2>
+    <p>Control font size through attributes.</p>
+    <pre>
+      <code class="hljs html" data-trim="" data-line-numbers="">
+        &lt;div data-font-size="1.5rem"&gt;Large Text&lt;/div&gt;
+      </code>
+    </pre>
+    <pre>
+      <code class="hljs css" data-trim="" data-line-numbers="">
+        div {
+          font-size: attr(data-font-size length);
+        }
+      </code>
+    </pre>
   </section>
 
-  <!-- Slide 4: How We Broke Native UI -->
   <section>
-    <h2>How We Broke Native UI</h2>
-    <p>Modern dev practices often discard browser defaults entirely.</p>
-    <ul>
-      <li>CSS resets remove spacing and styles indiscriminately</li>
-      <li>Component libraries rebuild native inputs with <code>div</code>s</li>
-      <li>We override system focus styles for aesthetics</li>
-      <li>Custom tokens replicate what the browser already provides</li>
-    </ul>
-    <p>All of this introduces complexity, inconsistency, and accessibility debt.</p>
-  </section>
+    <h2>Custom Properties Integration</h2>
+    <p>Pass attribute values to custom properties for broader usage.</p>
+    <pre><code>[data-button-color] {
+--button-color: attr(data-button-color color);
+}
 
-  <!-- Slide 5: Case Study - Lists -->
+button {
+background-color: var(--button-color);
+}</code></pre>
+    <p>HTML:</p>
+    <pre><code>&lt;div data-button-color="#00ff00"&gt;
+&lt;button&gt;Click Me&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  </section>
   <section>
-    <h2>Case Study: Lists</h2>
-    <p>The humble <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> come with default spacing, roles, and accessibility baked in.</p>
+    <h2>Why Use data-* Attributes?</h2>
     <ul>
-      <li>Resetting their styles loses the semantic and visual rhythm</li>
-      <li>Replacing them with <code>div</code> wrappers breaks screen reader expectations</li>
+      <li>Prevents conflicts with standard attributes</li>
+      <li>Provides a clear namespace for custom data</li>
+      <li>Accessible via JavaScript through <code>dataset</code></li>
     </ul>
-    <p>Embracing the default behavior yields better UX with zero effort.</p>
   </section>
-
-  <!-- Slide 6: Case Study - Buttons -->
   <section>
-    <h2>Case Study: Buttons</h2>
-    <p><code>&lt;button&gt;</code> is one of the most overridden elements on the web.</p>
-    <ul>
-      <li>Comes with keyboard support, click behavior, and focus handling</li>
-      <li>Gets restyled into <code>div</code>+<code>onClick</code> monstrosities</li>
-      <li>Creates extra work to reintroduce accessibility</li>
-    </ul>
-    <p><em>What if we styled buttons instead of replacing them?</em></p>
+    <h2>Browser Support</h2>
+    <p>Typed <code>attr()</code> is currently supported in Chrome and Edge. Support in other browsers is forthcoming.</p>
+    <p>Always check current compatibility before using in production.</p>
   </section>
-
-  <!-- Slide 7: Case Study - Forms -->
   <section>
-    <h2>Case Study: Forms</h2>
-    <p>Native HTML forms offer labels, validation, keyboard nav, and accessibility out of the box.</p>
-    <ul>
-      <li>Overriding them with custom components often leads to regressions</li>
-      <li>Native forms integrate better with browser UX and accessibility APIs</li>
-    </ul>
-    <p><strong>Let’s use the platform — then enhance it.</strong></p>
+    <h2>Conclusion</h2>
+    <p>The enhanced <code>attr()</code> function expands CSS capabilities, allowing for more dynamic and maintainable styles directly tied to HTML attributes.</p>
+    <p>Embrace this feature to create more flexible and semantic designs.</p>
   </section>
+  <section>
+    <h2>Why Attribute Utilities Matter</h2>
+    <ul>
+      <li>Attributes are declarative, readable, and native to HTML</li>
+      <li>They separate intent from implementation</li>
+      <li>They reduce visual noise in markup</li>
+      <li>Perfect for consistent, scalable UI state and theming</li>
+    </ul>
+  </section>
+  <section>
+    <h2>HTML + CSS: Finally Talking</h2>
+    <ul>
+      <li>No runtime JavaScript required</li>
+      <li>State expressed declaratively in the DOM</li>
+      <li>Custom logic baked into selectors</li>
+      <li>Greater control for theming, variants, sizing, visibility</li>
+    </ul>
+    <p><strong>HTML becomes the API. CSS becomes reactive.</strong></p>
+  </section>
+  <section>
+    <h2>Attribute-First = Future-Ready</h2>
+    <ul>
+      <li>Composes well with modern specs (e.g. container queries, cascade layers)</li>
+      <li>Reduces JS dependencies</li>
+      <li>Enables robust design systems that scale</li>
+      <li>Better debugging, source of truth remains in the markup</li>
+    </ul>
+    <p><em>The future of styling is declarative, expressive, and classless.</em></p>
+  </section>
+  <section>
+    <h2>What This Unlocks</h2>
+    <ul>
+      <li>Fine-grained UI control with no classes</li>
+      <li>Cleaner, logic-aware CSS files</li>
+      <li>Full design system control with HTML alone</li>
+      <li>New paradigms in utility-first design — without Tailwind-like verbosity</li>
+    </ul>
+  </section>
+  <section>
+    <h2>The Bottom Line</h2>
+    <p>We’re entering an era where HTML attributes will become the **new interface** for UI logic,</p>
+    <p>and CSS will finally treat them as **first-class citizens**.</p>
+    <p><strong>No JS. No classes. Just semantics and style.</strong></p>
+  </section>
+  <section>
+    <h3>Don't believe me? <a href="slides/topics/_grid-system-example.html" target="_blank" rel="noopener noreferrer">Try this</a> (with Chrome)</h3>
+  </section>
+</section>
 
+<section>
   <!-- Slide 8: The Case for Classless CSS -->
   <section>
     <h2>The Case for Classless CSS</h2>
@@ -421,145 +709,6 @@ border: 1px dashed currentColor;
     <p><strong>Embrace HTML. Respect semantics. Enhance with purpose.</strong></p>
     <p>Start small. Extend intentionally. And let the browser do some of the heavy lifting.</p>
   </section>
-
-  <section>
-    <h2>Why Attribute Utilities Matter</h2>
-    <ul>
-      <li>Attributes are declarative, readable, and native to HTML</li>
-      <li>They separate intent from implementation</li>
-      <li>They reduce visual noise in markup</li>
-      <li>Perfect for consistent, scalable UI state and theming</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>New CSS API: Typed Attribute Selectors</h2>
-    <p>CSS is getting smarter about attributes.</p>
-    <ul>
-      <li>New syntax: <code>[attr|d=value]</code> — matches numeric, boolean, or string values</li>
-      <li>Supports comparisons: <code>[data-size|d &gt;= 3]</code></li>
-      <li>Full integration into selectors and media-like logic</li>
-      <li>Native data binding — no JS needed</li>
-    </ul>
-    <p><em>This opens the door to dynamic styling via HTML alone.</em></p>
-  </section>
-
-  <section>
-    <h2>Examples: Future CSS with Typed Attributes</h2>
-    <pre><code>/* Button variants */
-button[data-variant="ghost"] {
-  background: none;
-  border: 1px dashed currentColor;
-}
-
-/* Select size modifiers */
-select[data-size|d=3] {
-  font-size: 1.25rem;
-  padding: 0.75rem;
-}
-
-/* Theme toggles */
-[data-theme="dark"] {
-  --color-bg: #111;
-  --color-text: #eee;
-}</code></pre>
-    <p><strong>One attribute, infinite UI variations.</strong></p>
-  </section>
-
-  <section>
-    <h2>HTML + CSS: Finally Talking</h2>
-    <ul>
-      <li>No runtime JavaScript required</li>
-      <li>State expressed declaratively in the DOM</li>
-      <li>Custom logic baked into selectors</li>
-      <li>Greater control for theming, variants, sizing, visibility</li>
-    </ul>
-    <p><strong>HTML becomes the API. CSS becomes reactive.</strong></p>
-  </section>
-
-  <section>
-    <h2>Attribute-First = Future-Ready</h2>
-    <ul>
-      <li>Composes well with modern specs (e.g. container queries, cascade layers)</li>
-      <li>Reduces JS dependencies</li>
-      <li>Enables robust design systems that scale</li>
-      <li>Better debugging, source of truth remains in the markup</li>
-    </ul>
-    <p><em>The future of styling is declarative, expressive, and classless.</em></p>
-  </section>
-  <!-- New section: Future CSS with Typed Attribute Selectors -->
-  <section>
-    <h2>CSS is Evolving (Finally)</h2>
-    <p>Browsers are starting to support <strong>typed attribute selectors</strong>:</p>
-    <ul>
-      <li><code>[data-count|d &gt;= 5]</code> → numeric comparison</li>
-      <li><code>[data-visible|b]</code> → boolean handling</li>
-      <li><code>[data-theme="dark"]</code> → string matching as always</li>
-    </ul>
-    <p>This enables new levels of declarative logic directly in CSS.</p>
-  </section>
-
-  <section>
-    <h2>How It Works</h2>
-    <p>You’ll be able to:</p>
-    <ul>
-      <li>Use operators like <code>&gt;</code>, <code>&lt;=</code>, <code>=</code> inside selectors</li>
-      <li>Style components conditionally with no JS</li>
-      <li>Write logic-aware CSS for size, state, count, toggle</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Future-Proof Examples</h2>
-    <pre><code>/* Numeric variant */
-[data-rating|d &gt;= 4] {
-color: green;
-}
-
-/* Boolean toggle */
-[aria-expanded|b] {
-border: 2px solid currentColor;
-}
-
-/* Size logic */
-[data-size|d &lt;= 2] {
-font-size: 0.85rem;
-}</code></pre>
-    <p>HTML becomes the API. CSS becomes reactive.</p>
-  </section>
-
-  <section>
-    <h2>What This Unlocks</h2>
-    <ul>
-      <li>Fine-grained UI control with no classes</li>
-      <li>Cleaner, logic-aware CSS files</li>
-      <li>Full design system control with HTML alone</li>
-      <li>New paradigms in utility-first design — without Tailwind-like verbosity</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>The Bottom Line</h2>
-    <p>We’re entering an era where HTML attributes will become the **new interface** for UI logic,</p>
-    <p>and CSS will finally treat them as **first-class citizens**.</p>
-    <p><strong>No JS. No classes. Just semantics and style.</strong></p>
-  </section>
-  <section>
-    <h3>Don't believe me? <a href="slides/topics/_grid-system-example.html" target="_blank" rel="noopener noreferrer">Try this</a> (with Chrome)</h3>
-  </section>
-
-  <!-- Final slide remains unchanged -->
-  <section>
-    <h2>Conclusion</h2>
-    <p>The browser gives you more than you think.</p>
-    <p>Embrace semantic HTML.</p>
-    <p>Style with classless CSS.</p>
-    <p>Scale with attribute-first utilities.</p>
-    <h3>(class)less is more.</h3>
-  </section>
-</section>
-
-<section>
   <section>
     <h2>So... why <mark>classless</mark> CSS?</h2>
     <ul>
@@ -598,9 +747,9 @@ font-size: 0.85rem;
   <section>
     <h2>Popular Classless Frameworks</h2>
     <ul>
-      <li><strong>Pico.css</strong> – beautiful defaults & theming</li>
-      <li><strong>Water.css</strong> – zero-config elegance</li>
-      <li><strong>Almond.css</strong> – opinionated and light</li>
+      <li><strong>Pico.css</strong> - beautiful defaults & theming</li>
+      <li><strong>Water.css</strong> - zero-config elegance</li>
+      <li><strong>Almond.css</strong> - opinionated and light</li>
     </ul>
   </section>
 
@@ -611,6 +760,14 @@ font-size: 0.85rem;
       <li>Responsive, minimal and beautiful</li>
       <li>Works out of the box with semantic tags</li>
       <li>Perfect for clean prototyping</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Utility Attributes & CSS</h2>
+    <ul>
+      <li>Use attributes like <code>data-size</code>, <code>data-variant</code>, <code>data-theme</code></li>
+      <li>Target in CSS without classes</li>
+      <li>Less DOM noise, better scalability</li>
     </ul>
   </section>
 
@@ -733,6 +890,6 @@ font-size: 0.85rem;
 </a>
 
     </main>
-    <script src="classless-is-more.24d52408.js" type="module"></script>
+    <script src="classless-is-more.2e966376.js" type="module"></script>
   </body>
 </html>

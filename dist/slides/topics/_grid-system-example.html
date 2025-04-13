@@ -87,11 +87,11 @@
     display: flex;
 
     &[size] {
-      grid-column-end: span attr(size type(< integer> ), var(--gs--cols));
+      grid-column-end: span attr(size type(integer), var(--gs--cols));
     }
 
     &[offset] {
-      grid-column-start: calc(attr(offset type(< integer> ), 0)  + 1);
+      grid-column-start: calc(attr(offset type(integer), 0)  + 1);
     }
   }
 
@@ -102,11 +102,11 @@
 
     [col] {
       &[im-size] {
-        grid-column-end: span attr(im-size type(< integer> ), var(--gs--cols));
+        grid-column-end: span attr(im-size type(integer), var(--gs--cols));
       }
 
       &[im-offset] {
-        grid-column-start: calc(attr(im-offset type(< integer> ), 0)  + 1);
+        grid-column-start: calc(attr(im-offset type(integer), 0)  + 1);
       }
     }
   }
@@ -118,11 +118,11 @@
 
     [col] {
       &[xs-size] {
-        grid-column-end: span attr(xs-size type(< integer> ), var(--gs--cols));
+        grid-column-end: span attr(xs-size type(integer), var(--gs--cols));
       }
 
       &[xs-offset] {
-        grid-column-start: calc(attr(xs-offset type(< integer> ), 0)  + 1);
+        grid-column-start: calc(attr(xs-offset type(integer), 0)  + 1);
       }
     }
   }
@@ -134,11 +134,11 @@
 
     [col] {
       &[sm-size] {
-        grid-column-end: span attr(sm-size type(< integer> ), var(--gs--cols));
+        grid-column-end: span attr(sm-size type(integer), var(--gs--cols));
       }
 
       &[sm-offset] {
-        grid-column-start: calc(attr(sm-offset type(< integer> ), 0)  + 1);
+        grid-column-start: calc(attr(sm-offset type(integer), 0)  + 1);
       }
     }
   }
@@ -150,11 +150,11 @@
 
     [col] {
       &[md-size] {
-        grid-column-end: span attr(md-size type(< integer> ), var(--gs--cols));
+        grid-column-end: span attr(md-size type(integer), var(--gs--cols));
       }
 
       &[md-offset] {
-        grid-column-start: calc(attr(md-offset type(< integer> ), 0)  + 1);
+        grid-column-start: calc(attr(md-offset type(integer), 0)  + 1);
       }
     }
   }
@@ -166,98 +166,100 @@
 
     [col] {
       &[lg-size] {
-        grid-column-end: span attr(lg-size type(< integer> ), var(--gs--cols));
+        grid-column-end: span attr(lg-size type(integer), var(--gs--cols));
       }
 
       &[lg-offset] {
-        grid-column-start: calc(attr(lg-offset type(< integer> ), 0)  + 1);
+        grid-column-start: calc(attr(lg-offset type(integer), 0)  + 1);
       }
     }
   }
 
   @media screen and (width >= 1600px) {
     :root {
-      --gs--container--inline-size: 1366px;
-    }
-
-    [col] {
-      &[xl-size] {
-        grid-column-end: span attr(xl-size type(< integer> ), var(--gs--cols));
+      & :root {
+        --gs--container--inline-size: 1366px;
       }
 
-      &[xl-offset] {
-        grid-column-start: calc(attr(xl-offset type(< integer> ), 0)  + 1);
+      & [col] {
+        &[xl-size] {
+          grid-column-end: span attr(xl-size type(integer), var(--gs--cols));
+        }
+
+        &[xl-offset] {
+          grid-column-start: calc(attr(xl-offset type(integer), 0)  + 1);
+        }
+      }
+    }
+
+    @media screen and (width >= 1920px) {
+      :root {
+        --gs--container--inline-size: 1600px;
+      }
+
+      [col] {
+        &[xxl-size] {
+          grid-column-end: span attr(xxl-size type(integer), var(--gs--cols));
+        }
+
+        &[xxl-offset] {
+          grid-column-start: calc(attr(xxl-offset type(integer), 0)  + 1);
+        }
       }
     }
   }
 
-  @media screen and (width >= 1920px) {
+  @layer typography {
     :root {
-      --gs--container--inline-size: 1600px;
+      --t--ratio: 1.067;
+      --t--font-size--base: 1.6rem;
+      --t--gap: 1rem;
     }
 
-    [col] {
-      &[xxl-size] {
-        grid-column-end: span attr(xxl-size type(< integer> ), var(--gs--cols));
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-size: var(--t--font-size--base);
+    }
+
+    :where(h1, h2, h3, h4, h5, h6, p) {
+      font-size: var(--t--font-size);
+      margin: 0;
+
+      & + & {
+        margin-block-start: var(--t--gap);
       }
-
-      &[xxl-offset] {
-        grid-column-start: calc(attr(xxl-offset type(< integer> ), 0)  + 1);
-      }
     }
-  }
-}
 
-@layer typography {
-  :root {
-    --t--ratio: 1.067;
-    --t--font-size--base: 1.6rem;
-    --t--gap: 1rem;
-  }
-
-  html {
-    font-size: 10px;
-  }
-
-  body {
-    font-size: var(--t--font-size--base);
-  }
-
-  :where(h1, h2, h3, h4, h5, h6, p) {
-    font-size: var(--t--font-size);
-    margin: 0;
-
-    & + & {
-      margin-block-start: var(--t--gap);
+    h1 {
+      --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 6));
     }
-  }
 
-  h1 {
-    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 6));
-  }
+    h2 {
+      --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 5));
+    }
 
-  h2 {
-    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 5));
-  }
+    h3 {
+      --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 4));
+    }
 
-  h3 {
-    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 4));
-  }
+    h4 {
+      --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 3));
+    }
 
-  h4 {
-    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 3));
-  }
+    h5 {
+      --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 2));
+    }
 
-  h5 {
-    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 2));
-  }
+    h6 {
+      --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 1));
+    }
 
-  h6 {
-    --t--font-size: calc(var(--t--font-size--base) * pow(var(--t--ratio), 1));
-  }
-
-  p {
-    --t--font-size: var(--t--font-size--base);
+    p {
+      --t--font-size: var(--t--font-size--base);
+    }
   }
 }
 </style>

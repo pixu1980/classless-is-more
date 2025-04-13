@@ -92,11 +92,11 @@
           border: 1px solid color-mix(in srgb, lightgray, transparent 75%);
 
           &[size] {
-            grid-column-end: span attr(size type(<integer>), var(--gs--cols));
+            grid-column-end: span attr(size type(integer), var(--gs--cols));
           }
 
           &[offset] {
-            grid-column-start: calc(attr(offset type(<integer>), 0) + 1);
+            grid-column-start: calc(attr(offset type(integer), 0) + 1);
           }
         }
 
@@ -108,11 +108,11 @@
 
           [col] {
             &[im-size] {
-              grid-column-end: span attr(im-size type(<integer>), var(--gs--cols));
+              grid-column-end: span attr(im-size type(integer), var(--gs--cols));
             }
 
             &[im-offset] {
-              grid-column-start: calc(attr(im-offset type(<integer>), 0) + 1);
+              grid-column-start: calc(attr(im-offset type(integer), 0) + 1);
             }
           }
         }
@@ -125,11 +125,11 @@
 
           [col] {
             &[xs-size] {
-              grid-column-end: span attr(xs-size type(<integer>), var(--gs--cols));
+              grid-column-end: span attr(xs-size type(integer), var(--gs--cols));
             }
 
             &[xs-offset] {
-              grid-column-start: calc(attr(xs-offset type(<integer>), 0) + 1);
+              grid-column-start: calc(attr(xs-offset type(integer), 0) + 1);
             }
           }
         }
@@ -141,11 +141,11 @@
           }
           [col] {
             &[sm-size] {
-              grid-column-end: span attr(sm-size type(<integer>), var(--gs--cols));
+              grid-column-end: span attr(sm-size type(integer), var(--gs--cols));
             }
 
             &[sm-offset] {
-              grid-column-start: calc(attr(sm-offset type(<integer>), 0) + 1);
+              grid-column-start: calc(attr(sm-offset type(integer), 0) + 1);
             }
           }
         }
@@ -158,11 +158,11 @@
 
           [col] {
             &[md-size] {
-              grid-column-end: span attr(md-size type(<integer>), var(--gs--cols));
+              grid-column-end: span attr(md-size type(integer), var(--gs--cols));
             }
 
             &[md-offset] {
-              grid-column-start: calc(attr(md-offset type(<integer>), 0) + 1);
+              grid-column-start: calc(attr(md-offset type(integer), 0) + 1);
             }
           }
         }
@@ -175,11 +175,11 @@
 
           [col] {
             &[lg-size] {
-              grid-column-end: span attr(lg-size type(<integer>), var(--gs--cols));
+              grid-column-end: span attr(lg-size type(integer), var(--gs--cols));
             }
 
             &[lg-offset] {
-              grid-column-start: calc(attr(lg-offset type(<integer>), 0) + 1);
+              grid-column-start: calc(attr(lg-offset type(integer), 0) + 1);
             }
           }
         }
@@ -187,16 +187,17 @@
         /* xl */
         @media screen and (width >= 1600px) {
           :root {
+          :root {
             --gs--container--inline-size: 1366px;
           }
 
           [col] {
             &[xl-size] {
-              grid-column-end: span attr(xl-size type(<integer>), var(--gs--cols));
+              grid-column-end: span attr(xl-size type(integer), var(--gs--cols));
             }
 
             &[xl-offset] {
-              grid-column-start: calc(attr(xl-offset type(<integer>), 0) + 1);
+              grid-column-start: calc(attr(xl-offset type(integer), 0) + 1);
             }
           }
         }
@@ -209,11 +210,11 @@
 
           [col] {
             &[xxl-size] {
-              grid-column-end: span attr(xxl-size type(<integer>), var(--gs--cols));
+              grid-column-end: span attr(xxl-size type(integer), var(--gs--cols));
             }
 
             &[xxl-offset] {
-              grid-column-start: calc(attr(xxl-offset type(<integer>), 0) + 1);
+              grid-column-start: calc(attr(xxl-offset type(integer), 0) + 1);
             }
           }
         }
