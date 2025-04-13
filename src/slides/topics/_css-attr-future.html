@@ -1,191 +1,182 @@
 <section>
   <section>
-    <h2 balance><mark>Attribute utilities</mark> instead of classes</h2>
+    <h2 balance><mark>Attributes</mark> utilities</h2>
   </section>
   <section>
-    <h3 balance>Do you mean using attributes <mark>instead of</mark> classes? <mark class="fragment">Yep!</mark></h3>
-  </section>
-  <section>
-    <h3 balance>Do you know CSS <mark>attr()</mark> function is about to get a <mark>game-changer update</mark>?</h3>
+    <h3 balance><mark>Attributes</mark>?? <br /><span class="fragment">instead of Classes??</span></h3>
   </section>
   <include src="./slides/topics/_time-circuits.html"></include>
   <section>
-    <h3>What is <mark>attr()</mark>?</h3>
-    <pre>
-      <code class="hljs html" data-trim data-line-numbers>
-        <div data-title="This is the data-title"></div>
-      </code>
-    </pre>
-    <pre>
-      <code class="hljs css" data-trim data-line-numbers>
-        div::after {
-          content: attr(data-title);
-        }
-      </code>
-    </pre>
-    <small balance>Traditionally limited to the <mark>content</mark> property and returned strings, the <mark>attr()</mark> function in CSS allows you to retrieve the value of an HTML attribute and use it in your styles.</small>
+    <h4>A class selector and an attribute selector has exactly the <mark>same specificity</mark></h4>
+    <figure class="fragment">
+      <img src="./assets/specificity.svg" width="900" alt="CSS Specificity explaination" />
+    </figure>
   </section>
   <section>
-    <h3>
-      Our HTML is
-      <mark>
-        already <br />
-        full
-      </mark>
-      of attributes
-    </h3>
-    <pre>
-      <code class="hljs html" data-trim data-line-numbers>
-        &lt;button disabled aria-label="Close modal"&gt;x&lt;/button&gt;
-        &lt;input type="email" required placeholder="Your email" /&gt;
-        &lt;div data-theme="dark" data-size="lg"&gt;&lt;/div&gt;
-      </code>
-    </pre>
-  </section>
-  <section>
-    <h3>
-      <mark>Why not</mark> use them <br />
-      for CSS selectors?
-    </h3>
-    <pre>
-      <code class="hljs scss" data-trim data-line-numbers>
-        [aria-label] { ... }
-        [type="email"] { ... }
-        [data-size*="lg"] { ... }
-      </code>
-    </pre>
-  </section>
-  <section>
-    <h3>CSS attr() <mark>evolution</mark></h3>
-    <p balance>Unlocking <mark>infinite possibilities</mark> with typed attributes</p>
-  </section>
-  <section>
+    <h4>Why attribute utilities matters?</h4>
     <ul>
-      <li>Content-first web design</li>
-      <li>Accessible and functional by default</li>
-      <li>Declarative, readable, scalable</li>
-      <li>No class spaghetti</li>
-      <li>Easy to debug and maintain</li>
-      <li>Reduced dependency on JS frameworks</li>
+      <li class="fragment"><mark>Declarative</mark>, readable, and native to HTML</li>
+      <li class="fragment"><mark>Separate</mark> intent from implementation</li>
+      <li class="fragment"><mark>Reduce</mark> visual noise in markup</li>
+      <li class="fragment"><mark>Consistent</mark>, scalable UI state and theming</li>
     </ul>
   </section>
   <section>
-    <h2>What's New?</h2>
-    <p balance>Now, <mark>attr()</mark> supports typed values, enabling its use beyond <mark>content</mark> property</p>
+    <h4 balance>Look... our HTML is <mark> already full </mark> of attributes, at least... <mark class="fragment">it should be!</mark></h4>
   </section>
   <section>
+    <h4>So <mark>why not</mark> use them for CSS selectors?</h4>
     <pre>
-      <code class="hljs scss" data-trim data-line-numbers>
-        div {
-          font-size: attr(data-font-size length);
-          color: attr(data-color color, black);
-        }
+      <code class="hljs html" data-trim data-line-numbers>
+        &lt;html data-theme="dark"&gt;
+          &lt;head&gt;&lt;/head&gt;  
+          &lt;body&gt;
+            &lt;button disabled aria-label="Close modal"&gt;x&lt;/button&gt;
+          
+            &lt;input type="email" required placeholder="Your email" /&gt;
+            
+            ...
+          &lt;/body&gt;  
+          &lt;style&gt;
+            [data-theme*="dark"] { ... }
+            [aria-label] { ... }
+            [type="email"] { ... }
+          &lt;/style&gt;  
+        &lt;/html&gt;
       </code>
     </pre>
   </section>
   <section>
+    <h4 balance>CSS <mark>attr()</mark> function allows to get the value of an HTML attribute as a string</h4>
+    <pre>
+      <code class="hljs html" data-trim data-line-numbers>
+        &lt;div title="This is the title"&gt;&lt;/div&gt;
+        
+        &lt;style&gt;
+          div::after {
+            content: attr(title);
+          }
+        &lt;/style&gt;
+      </code>
+    </pre>
+  </section>
+  <section>
+    <p balance>Unfortunately, this was traditionally limited to the CSS <mark>content</mark> property</p>
+  </section>
+  <section>
+    <h4 balance>Do you know CSS <mark>attr()</mark> function is about to get a <mark>game-changer update</mark>?</h4>
+  </section>
+  <section>
+    <h4 balance><mark>What's new</mark> with attr() function?</h4>
+    <pre>
+      <code class="hljs html" data-trim data-line-numbers>
+        &lt;element attr="value"&gt;&lt;/element&gt;
+        
+        &lt;style&gt;
+          element {
+            property: attr(attr type(&lt;length&gt;), fallback-value);
+          }
+        &lt;/style&gt;
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h4>Example: <mark>Grid Control</mark></h4>
+    <pre>
+      <code class="hljs html" data-trim data-line-numbers>
+        &lt;div column-start="1" column-end="3"&gt;
+          this is the div content
+        &lt;/div&gt;
+
+        &lt;style&gt;
+          div {
+            grid-column-start: attr(column-start type(&lt;integer&gt;), 1);
+            grid-column-end: attr(column-end type(&lt;integer&gt;), -1);
+          }
+        &lt;/style&gt;
+      </code>
+    </pre>
     <p>
-      Supported types include: <mark>angle</mark>, color, <mark>custom-ident</mark>, image, <mark>integer</mark>, length, <mark>length-percentage</mark>, number, <mark>percentage</mark>, resolution, <mark>string</mark>, time,
-      <mark>transform-function</mark>, ...
+      Use <mark>attr()</mark> to control grid <br />
+      layout via HTML attributes
     </p>
   </section>
   <section>
-    <h2>Example: Grid Control</h2>
-    <p>Use <mark>attr()</mark> to control grid layout via HTML attributes.</p>
+    <h4>Example: Dynamic <mark>Font Sizes & Colors</mark></h4>
     <pre>
       <code class="hljs html" data-trim data-line-numbers>
-        &lt;div data-column-start="1" data-column-end="3"&gt;
-          this is the div content
+        &lt;div font-size="5em" text-color="rebeccapurple"&gt;
+          Hello World!
         &lt;/div&gt;
+        
+        &lt;style&gt;
+          div {
+            font-size: attr(font-size type(&lt;length&gt;), 1em);
+            color: attr(text-color type(&lt;color&gt;), black);
+          }
+        &lt;/style&gt;
       </code>
     </pre>
-    <pre>
-      <code class="hljs css" data-trim data-line-numbers>
-        div {
-          grid-column-start: attr(column-start integer);
-          grid-column-end: attr(column-end integer);
-        }
-      </code>
-    </pre>
+    <p>
+      Set font size, colors (or whatever) <br />
+      <mark>dynamically using attributes</mark>
+    </p>
   </section>
   <section>
-    <h2>Example: Dynamic Colors</h2>
-    <p>Set colors dynamically using attributes.</p>
-    <pre>
-      <code class="hljs html" data-trim data-line-numbers>
-        &lt;div data-color="rebeccapurple"&gt;Red Text&lt;/div&gt;
-      </code>
-    </pre>
-    <pre>
-      <code class="hljs css" data-trim data-line-numbers>
-        div {
-          color: attr(data-color color, black);
-          background-color: color-mix(in srgb, attr(data-color color) 50%, white 50%);
-        }
-      </code>
-    </pre>
-  </section>
-  <section>
-    <h2>Example: Font Sizes</h2>
-    <p>Control font size through attributes.</p>
-    <pre>
-      <code class="hljs html" data-trim data-line-numbers>
-        &lt;div data-font-size="1.5rem"&gt;Large Text&lt;/div&gt;
-      </code>
-    </pre>
-    <pre>
-      <code class="hljs css" data-trim data-line-numbers>
-        div {
-          font-size: attr(data-font-size length);
-        }
-      </code>
-    </pre>
+    <h4>Better to use <mark>data-*</mark> attributes?</h4>
+    <ul>
+      <li class="fragment">Virtually <mark>prevents conflicts</mark> with standard attributes</li>
+      <li class="fragment">Provides a <mark>clear namespace</mark> for custom data</li>
+      <li class="fragment">Accessible via JavaScript through <mark>dataset</mark></li>
+    </ul>
   </section>
 
   <section>
-    <h2>Custom Properties Integration</h2>
-    <p>Pass attribute values to custom properties for broader usage.</p>
-    <pre><code>[data-button-color] {
---button-color: attr(data-button-color color);
-}
+    <h4>CSS <mark>Custom Properties</mark> are supported as well</h4>
+    <pre>
+      <code class="hljs html" data-trim data-line-numbers>
+        &lt;button data-color="rebeccapurple"&gt;
+          Click me!
+        &lt;/button&gt;
+        
+        &lt;style&gt;
+          button[color] {
+            --button-color: attr(data-color type(&lt;color&gt;), Canvas);
 
-button {
-background-color: var(--button-color);
-}</code></pre>
-    <p>HTML:</p>
-    <pre><code>&lt;div data-button-color="#00ff00"&gt;
-&lt;button&gt;Click Me&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+            background-color: var(--button-color);
+          }
+        &lt;/style&gt;
+      </code>
+    </pre>
+    <p>
+      Pass
+      <mark>
+        attribute values to custom <br />
+        properties
+      </mark>
+      for broader usage
+    </p>
   </section>
   <section>
-    <h2>Why Use data-* Attributes?</h2>
+    <p balance><mark>Supported types</mark> include: angle, color, custom-ident, image, integer, length, length-percentage, number, percentage, resolution, string, time, transform-function...</p>
+  </section>
+  <section>
+    <p balance>...unlocking <mark>infinite possibilities</mark> with typed attributes:</p>
     <ul>
-      <li>Prevents conflicts with standard attributes</li>
-      <li>Provides a clear namespace for custom data</li>
-      <li>Accessible via JavaScript through <code>dataset</code></li>
+      <li class="fragment"><mark>Content-first</mark> web design</li>
+      <li class="fragment"><mark>Declarative</mark>, readable, scalable</li>
+      <li class="fragment"><mark>No spaghetti</mark> css classes</li>
+      <li class="fragment"><mark>Reduced dependency</mark> on JS frameworks</li>
     </ul>
   </section>
   <section>
-    <h2>Browser Support</h2>
-    <p>Typed <code>attr()</code> is currently supported in Chrome and Edge. Support in other browsers is forthcoming.</p>
-    <p>Always check current compatibility before using in production.</p>
+    <p>
+      No JS. No classes. <br />
+      <mark>Just semantics and style</mark>.
+    </p>
   </section>
-  <section>
-    <h2>Conclusion</h2>
-    <p>The enhanced <code>attr()</code> function expands CSS capabilities, allowing for more dynamic and maintainable styles directly tied to HTML attributes.</p>
-    <p>Embrace this feature to create more flexible and semantic designs.</p>
-  </section>
-  <section>
-    <h2>Why Attribute Utilities Matter</h2>
-    <ul>
-      <li>Attributes are declarative, readable, and native to HTML</li>
-      <li>They separate intent from implementation</li>
-      <li>They reduce visual noise in markup</li>
-      <li>Perfect for consistent, scalable UI state and theming</li>
-    </ul>
-  </section>
-  <section>
-    <h2>HTML + CSS: Finally Talking</h2>
+  <!-- <section>
+    <h4>HTML + CSS: Finally Talking</h4>
     <ul>
       <li>No runtime JavaScript required</li>
       <li>State expressed declaratively in the DOM</li>
@@ -193,9 +184,9 @@ background-color: var(--button-color);
       <li>Greater control for theming, variants, sizing, visibility</li>
     </ul>
     <p><strong>HTML becomes the API. CSS becomes reactive.</strong></p>
-  </section>
-  <section>
-    <h2>Attribute-First = Future-Ready</h2>
+  </section> -->
+  <!-- <section>
+    <h4>Attribute-First = Future-Ready</h4>
     <ul>
       <li>Composes well with modern specs (e.g. container queries, cascade layers)</li>
       <li>Reduces JS dependencies</li>
@@ -203,23 +194,14 @@ background-color: var(--button-color);
       <li>Better debugging, source of truth remains in the markup</li>
     </ul>
     <p><em>The future of styling is declarative, expressive, and classless.</em></p>
-  </section>
+  </section> -->
   <section>
-    <h2>What This Unlocks</h2>
-    <ul>
-      <li>Fine-grained UI control with no classes</li>
-      <li>Cleaner, logic-aware CSS files</li>
-      <li>Full design system control with HTML alone</li>
-      <li>New paradigms in utility-first design — without Tailwind-like verbosity</li>
-    </ul>
+    <h4>Take<mark>away</mark></h4>
+    <small>
+      <blockquote>We’re entering an era where HTML attributes will become the <mark>new interface</mark> for UI logic, and CSS will finally treat them as <mark>first-class citizens</mark>.</blockquote>
+    </small>
   </section>
-  <section>
-    <h2>The Bottom Line</h2>
-    <p>We’re entering an era where HTML attributes will become the **new interface** for UI logic,</p>
-    <p>and CSS will finally treat them as **first-class citizens**.</p>
-    <p><strong>No JS. No classes. Just semantics and style.</strong></p>
-  </section>
-  <section>
+  <!-- <section>
     <h3>Don't believe me? <a href="./slides/topics/_grid-system-example.html" target="_blank" rel="noopener noreferrer">Try this</a> (with Chrome)</h3>
-  </section>
+  </section> -->
 </section>

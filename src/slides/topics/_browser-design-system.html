@@ -8,38 +8,170 @@
   <section>
     <h4>
       A <mark>crude</mark>, mostly <mark>undocumented</mark>, <br />
-      foundational design system: but <mark>real</mark>!
+      foundational design system: <span class="fragment">but <mark>real</mark>!</span>
     </h4>
   </section>
   <section>
-    <h5 balance>
-      <mark>System Colors</mark><br />
-      Accessible palette via <mark>Canvas</mark>, <mark>Highlight</mark>, <mark>ButtonText</mark>, etc.
-    </h5>
+    <comparison>
+      <left>
+        <h4 balance>
+          <mark>System Colors</mark>
+        </h4>
+        <small balance>Natively <mark>accessibile color palette</mark> derived from OS colors, reactive to system settings, including <mark>accent-color</mark></small>
+      </left>
+      <right>
+        <div system-colors>
+          <ul>
+            <li style="--color: Canvas">Canvas</li>
+            <li style="--color: CanvasText">CanvasText</li>
+            <li style="--color: LinkText">LinkText</li>
+            <li style="--color: VisitedText">VisitedText</li>
+            <li style="--color: ActiveText">ActiveText</li>
+            <li style="--color: ButtonFace">ButtonFace</li>
+            <li style="--color: ButtonText">ButtonText</li>
+            <li style="--color: ButtonBorder">ButtonBorder</li>
+            <li style="--color: GrayText">GrayText</li>
+            <li style="--color: Field">Field</li>
+            <li style="--color: FieldText">FieldText</li>
+            <li style="--color: Highlight">Highlight</li>
+            <li style="--color: HighlightText">HighlightText</li>
+            <li style="--color: Mark">Mark</li>
+            <li style="--color: MarkText">MarkText</li>
+            <li style="--color: SelectedItem">SelectedItem</li>
+            <li style="--color: SelectedItemText">SelectedItemText</li>
+            <li style="--color: AccentColor">AccentColor</li>
+            <li style="--color: AccentColorText">AccentColorText</li>
+          </ul>
+          <ul>
+            <li style="--color: Canvas">Canvas</li>
+            <li style="--color: CanvasText">CanvasText</li>
+            <li style="--color: LinkText">LinkText</li>
+            <li style="--color: VisitedText">VisitedText</li>
+            <li style="--color: ActiveText">ActiveText</li>
+            <li style="--color: ButtonFace">ButtonFace</li>
+            <li style="--color: ButtonText">ButtonText</li>
+            <li style="--color: ButtonBorder">ButtonBorder</li>
+            <li style="--color: GrayText">GrayText</li>
+            <li style="--color: Field">Field</li>
+            <li style="--color: FieldText">FieldText</li>
+            <li style="--color: Highlight">Highlight</li>
+            <li style="--color: HighlightText">HighlightText</li>
+            <li style="--color: Mark">Mark</li>
+            <li style="--color: MarkText">MarkText</li>
+            <li style="--color: SelectedItem">SelectedItem</li>
+            <li style="--color: SelectedItemText">SelectedItemText</li>
+            <li style="--color: AccentColor">AccentColor</li>
+            <li style="--color: AccentColorText">AccentColorText</li>
+          </ul>
+        </div>
+      </right>
+    </comparison>
   </section>
   <section>
-    <h5 balance>
-      <mark>Type Scale</mark><br />
-      Heading elements from <mark>&lt;h1&gt;</mark> to <mark>&lt;h6&gt;</mark> follow a visual hierarchy
-    </h5>
+    <comparison>
+      <left>
+        <h4 balance>
+          <mark>Type Scale & Spacings</mark>
+        </h4>
+        <small balance>Heading elements from <mark>&lt;h1&gt;</mark> to <mark>&lt;h6&gt;</mark>, paragraphs and all other phrasing elements follow a <mark>visual hierarchy</mark>, spacings reflect an implied scale and rhythm</small>
+      </left>
+      <right>
+        <div typography>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+          <p>Paragraph</p>
+        </div>
+      </right>
+    </comparison>
   </section>
   <section>
-    <h5 balance>
-      <mark>Default Spacing</mark><br />
-      Margins and paddings reflect an implied spacing scale
-    </h5>
-  </section>
-  <section>
-    <h5 balance>
-      <mark>Focus Styles</mark><br />
-      Keyboard-focused elements get visible outlines out of the box
-    </h5>
-  </section>
-  <section>
-    <h5 balance>
-      <mark>Form Inputs</mark><br />
-      Native UI elements that adapt to platform conventions
-    </h5>
+    <comparison>
+      <left>
+        <h4 balance>
+          <mark>Focus Styles & User Input</mark>
+        </h4>
+        <small balance>Native UI elements that adapt to <mark>platform conventions</mark>, keyboard-focused elements get visible outlines <mark>out of the box</mark></small>
+      </left>
+      <right>
+        <form native-ui>
+          <fieldset>
+            <legend>A simple list of UI elements</legend>
+            <details name="native-ui" open>
+              <summary>Checkables</summary>
+              <div>
+                <label><input name="radio" type="radio" checked /> Radio 1</label> <br />
+                <label><input name="radio" type="radio" checked /> Radio 2</label> <br />
+                <label><input name="radio" type="radio" disabled /> Radio 3 (disabled)</label>
+              </div>
+              <div>
+                <label><input name="check" type="checkbox" checked /> Checkbox</label> <br />
+                <label><input name="disabled-check" type="checkbox" disabled checked /> Checkbox (disabled)</label>
+              </div>
+              <div>
+                <label><input name="switch" type="checkbox" checked switch /> Switch</label> <br />
+                <label><input name="disabled-switch" type="checkbox" disabled switch /> Switch (disabled)</label>
+              </div>
+            </details>
+            <details name="native-ui">
+              <summary>Inputs</summary>
+              <div>
+                <label>
+                  Text
+                  <input id="input" name="input" type="text" value="Input" placeholder="Enter text..." />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Date
+                  <input id="input" name="input" type="date" value="2025-04-14" />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Time
+                  <input id="input" name="input" type="time" value="13:55" />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Textarea
+                  <textarea placeholder="Describe your product here..." rows="5"></textarea>
+                </label>
+              </div>
+            </details>
+            <details name="native-ui">
+              <summary>Selectors</summary>
+              <div>
+                <label>
+                  Select
+                  <select>
+                    <option selected>Select, Option 1</option>
+                    <option>Select, Option 2</option>
+                    <option disabled>Select, Option 3 (disabled)</option>
+                  </select>
+                </label>
+              </div>
+              <div>
+                <label>
+                  Listbox
+                  <select size="3">
+                    <option selected>Select, Option 1</option>
+                    <option>Select, Option 2</option>
+                    <option disabled>Select, Option 3 (disabled)</option>
+                  </select>
+                </label>
+              </div>
+            </details>
+            <button type="button">Button</button>
+            <button type="button" disabled>Button (disabled)</button>
+          </fieldset>
+        </form>
+      </right>
+    </comparison>
   </section>
   <section>
     <p>
@@ -51,7 +183,7 @@
     <ul>
       <li class="fragment">Structure, meaning, and accessibility <mark>baked in</mark></li>
       <li class="fragment">Assistive technologies <mark>understands your layout</mark></li>
-      <li class="fragment">HTML is the best component system, <mark>embrace it</mark>!</li>
+      <li class="fragment">HTML is a <mark>base component system  </mark> providing accordions, dialogs and many more for free, <mark>make it yours</mark>!</li>
     </ul>
   </section>
   <section>
@@ -61,34 +193,6 @@
       <li class="fragment">User agents are improving <mark>at every release</mark>, and their default styles are <mark>converging over time</mark></li>
       <li class="fragment">Focus indicators and roles come out of the box, <mark>no JS needed</mark> for basic interactions</li>
     </ul>
-  </section>
-  <section>
-    <h3>Ever used CSS <mark>System Colors</mark>?</h3>
-  </section>
-  <section>
-    <div class="system-colors">
-      <p
-        class="codepen"
-        data-height="600"
-        data-default-tab="result"
-        data-slug-hash="YPzmeom"
-        data-pen-title="HTML elements &amp;amp; CSS system colors"
-        data-user="pixu1980"
-        style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em"
-      >
-        <span>See the Pen <a href="https://codepen.io/pixu1980/pen/YPzmeom"> HTML elements &amp; CSS system colors</a> by pixu1980 (<a href="https://codepen.io/pixu1980">@pixu1980</a>) on <a href="https://codepen.io">CodePen</a>.</span>
-      </p>
-      <script async src="https://public.codepenassets.com/embed/index.js"></script>
-      <style>
-        .system-colors {
-          margin-block-start: 2rem;
-
-          iframe {
-            display: unset !important;
-          }
-        }
-      </style>
-    </div>
   </section>
   <section>
     <h3>Take<mark>away</mark></h3>
