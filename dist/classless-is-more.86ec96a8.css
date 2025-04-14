@@ -15028,6 +15028,22 @@
     }
   }
 
+  @layer links {
+    [links] {
+      & figure {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-block-start: 2.5rem;
+
+        & img {
+          aspect-ratio: 1;
+          width: 20vw;
+          margin-block-end: 2rem;
+        }
+      }
+    }
+  }
+
   @layer pixu {
     [pixu] {
       & img {
@@ -15576,4 +15592,4 @@
     }
   }
 }
-/*# sourceMappingURL=classless-is-more.582d5980.css.map */
+/*# sourceMappingURL=classless-is-more.86ec96a8.css.map */

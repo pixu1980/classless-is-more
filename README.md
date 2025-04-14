@@ -1,6 +1,5 @@
-# talk-template
-Talk Template
+# classless-is-more
 
-Check the slides here
+Talk for the Codemotion 2025 Rome Conference,
 
-[Talk Template](https://pixu1980.github.io/talk-template/)
+Check the slides here -> [(class)less is more](https://pixu1980.github.io/classless-is-more)
