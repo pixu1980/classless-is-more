@@ -1,6 +1,9 @@
 @import 'npm:@pixu-talks/fonts';
 @import 'npm:@pixu-talks/theme';
 
+@import './fonts/digital-numbers/digital-numbers.css';
+@import './fonts/michroma/michroma.css';
+
 @layer pixu-talk {
   .reveal pre {
     max-width: 80%;

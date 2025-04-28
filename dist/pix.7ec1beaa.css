@@ -868,11 +868,22 @@
 
   @layer layout {
     body {
-      grid-template: "header aside" 5.5rem
-                     "content aside" 1fr
-                     "footer aside" 4rem
-                     / 60vw 40vw;
+      grid-template: "header" 5.5rem
+                     "content" 1fr
+                     "footer" 4rem
+                     / 100vw;
       display: grid;
+
+      &:has([type="checkbox"][name="editor"]:checked) {
+        grid-template: "header aside" 5.5rem
+                       "content aside" 1fr
+                       "footer aside" 4rem
+                       / 60vw 40vw;
+
+        & > aside {
+          display: initial;
+        }
+      }
 
       & > header {
         z-index: 1;
@@ -898,6 +909,7 @@
 
       & > aside {
         grid-area: aside;
+        display: none;
       }
 
       & > :where(header, main, footer) {
@@ -2376,4 +2388,4 @@ style[type="text/css"] {
 .dropdown.color-scheme {
   width: 12rem;
 }
-/*# sourceMappingURL=pix.379313a0.css.map */
+/*# sourceMappingURL=pix.7ec1beaa.css.map */

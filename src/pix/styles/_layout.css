@@ -3,10 +3,22 @@
     display: grid;
 
     grid-template:
-      'header aside' 5.5rem
-      'content aside' 1fr
-      'footer aside' 4rem
-      / 60vw 40vw;
+      'header' 5.5rem
+      'content' 1fr
+      'footer' 4rem
+      / 100vw;
+
+    &:has([type='checkbox'][name='editor']:checked) {
+      grid-template:
+        'header aside' 5.5rem
+        'content aside' 1fr
+        'footer aside' 4rem
+        / 60vw 40vw;
+
+      > aside {
+        display: initial;
+      }
+    }
 
     > header {
       grid-area: header;
@@ -37,6 +49,7 @@
     }
 
     > aside {
+      display: none;
       grid-area: aside;
     }
 
